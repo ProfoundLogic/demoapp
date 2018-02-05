@@ -1,11 +1,4 @@
 
-var portNum = "";
-if (process.platform === 'aix') {
-  portNum = "8231";
-} else {
-  portNum = "8081";
-}
-
 function proddsp(pridIn) {
   pjs.define("pridIn", {
     type: 'packed', length: 5, decimals: 0, refParm: pridIn
@@ -14,7 +7,15 @@ function proddsp(pridIn) {
   pjs.defineDisplay("display", "proddsp.json");
   pjs.defineTable("productsp", { read: true, keyed: true });
 
-  port = portNum;
+  var portNum = "";
+  if (process.platform === 'aix') {
+    portNum = "8231";
+    wsaddress = "power8:" + portNum;
+  } else {
+    portNum = "8081"; //Change to something like pjs.getProfound().getPort();
+    wsaddress = "localhost:" + portNum;
+  }
+  
   prid = pridIn;
 
   while (!exit) {
