@@ -26,7 +26,9 @@ function prodlist() {
       pjs.execute(c1);
     }
     
+    console.log('list execute: ' + sqlstate);
     productsp = pjs.fetch(c1, SQL_FETCH_ALL);
+    console.log('list fetch: ' + sqlstate);
     pjs.close(c1);
 
     display.mygrid.replaceRecords(productsp);
