@@ -29,6 +29,9 @@ function proddsp(pridIn) {
     display.orders.replaceRecords(ordersResult.orders);
     
     display.myprod.execute();
+    
+    if (validaddr)
+      pjs.call("addresscleanse.js", ordersResult.orders);
   }
   
   return;
