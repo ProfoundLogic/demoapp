@@ -7,7 +7,7 @@ var usps = new USPS({
 });
 
 var promisify;
-if (process.version === '6.11.5')
+if (process.version === 'v6.11.5')
   promisify = require("promisify-es6"); //Alternative for Node.js 7.x and prior...
 else
   promisify = require('util').promisify;  // requires Node.js 8 or above
