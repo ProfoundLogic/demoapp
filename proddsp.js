@@ -8,13 +8,10 @@ function proddsp(pridIn) {
   pjs.defineTable("productsp", { read: true, keyed: true });
 
   var portNum = "";
-  if (process.platform === 'aix') {
+  if (process.platform === 'aix')
     portNum = "8231";
-    wsaddress = "power8:" + portNum;
-  } else {
+  else
     portNum = "8081"; //Change to something like pjs.getProfound().getPort();
-    wsaddress = "localhost:" + portNum;
-  }
   
   prid = pridIn;
 

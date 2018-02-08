@@ -19,8 +19,6 @@ var runPromise = pjs.fiber.runPromise;
 function cleanse(orders) {
 
   pjs.defineDisplay("display", "AddressCleansingDisplay.json");
-
-  console.log(orders);
   
   display.grid1.addRecords(orders);
 
