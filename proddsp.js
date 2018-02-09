@@ -6,12 +6,6 @@ function proddsp(pridIn) {
 
   pjs.defineDisplay("display", "proddsp.json");
   pjs.defineTable("productsp", { read: true, keyed: true });
-
-  var portNum = "";
-  if (process.platform === 'aix')
-    portNum = "8231";
-  else
-    portNum = "8081"; //Change to something like pjs.getProfound().getPort();
   
   prid = pridIn;
 
@@ -23,6 +17,7 @@ function proddsp(pridIn) {
 
     var ordersResult = GetOrders(prid);
     ordercount = ordersResult.count;
+
     display.orders.replaceRecords(ordersResult.orders);
     
     display.myprod.execute();
@@ -34,7 +29,7 @@ function proddsp(pridIn) {
   return;
   
   function GetOrders(productID) {
-    return pjs.sendRequest("get", "http://localhost:" + portNum + "/prodorders/" + productID, {});
+    return pjs.sendRequest("get", "http://localhost:8081/prodorders/" + productID, {});
   }
 }
 
