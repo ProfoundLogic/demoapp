@@ -5,11 +5,10 @@ var usps = new USPS({
   userId: '287PROFO3842',
   ttl: 10000
 });
-
-var promisify = require('util').promisify;
-
-var verify = promisify(usps.verify).bind(usps);
 var runPromise = pjs.fiber.runPromise;
+var promisify = require('util').promisify;
+var verify = promisify(usps.verify).bind(usps);
+
 
 function cleanse(orders) {
 

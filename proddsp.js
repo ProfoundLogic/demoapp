@@ -17,7 +17,6 @@ function proddsp(productId) {
 
     // Retrieve Product Orders using a Web Service
     var ordersResult = pjs.sendRequest("get", "http://localhost:8081/prodorders/" + productId, {});
-    ordercount = ordersResult.count;
     display.orders.replaceRecords(ordersResult.orders);
     
     display.myprod.execute();
