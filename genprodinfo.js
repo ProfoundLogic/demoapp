@@ -24,7 +24,7 @@ function generateDocument(product) {
   paragraph.heading1().center();
   doc.addParagraph(paragraph);
   
-  text = new docx.TextRun("This document details product " + product.prid + " as of " + (new Date()).toLocaleDateString() + ".").font("Calibri");
+  text = new docx.TextRun("This document details product " + product.prid + " as of " + (new Date()).toLocaleDateString("en-US") + ".").font("Calibri");
   paragraph = new docx.Paragraph(text)
   doc.addParagraph(paragraph);
   
