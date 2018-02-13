@@ -1,14 +1,13 @@
 var docx = require('docx');
 
-function genprodinfo(req, res) {
-  var prodid = req.params.id;
+function genprodinfo(request, response) {
+  var productId = request.params.id;
+  var product = pjs.query("SELECT * FROM PRODUCTSP WHERE PRID = " + productId, 1);
+  product.features = pjs.query("SELECT b.FENAME from PRODFEATP as a, FEATURESP as b where a.XPRID = ? and a.XFEID = b.FEID", productId);
   
-  var product = pjs.query("SELECT * FROM PRODUCTSP WHERE PRID = " + prodid);
-  product[0].features = pjs.query("SELECT b.FENAME from PRODFEATP as a, FEATURESP as b where a.XPRID = ? and a.XFEID = b.FEID", prodid);
-  
-  var document = generateDocument(product[0]);
-  var exporter = new docx.ExpressPacker(document, res);
-  exporter.pack(prodid + " Information");
+  var document = generateDocument(product);
+  var exporter = new docx.ExpressPacker(document, response);
+  exporter.pack(productId + " Information");
   
 }
 

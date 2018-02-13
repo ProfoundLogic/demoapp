@@ -8,14 +8,14 @@ function proddsp(productId) {
   pjs.defineTable("productsp", { read: true, keyed: true });
   
   while (!exit) {
-    // Retrieve Product Information
+    // Tab 1: Retrieve Product Information
     productsp.getRecord(productId);
 
-    // Retrieve Features
+    // Tab 2: Retrieve Features
     var featureList = pjs.query("select b.FENAME from demolib.PRODFEATP as a, demolib.featuresp as b where a.XPRID = ? and a.XFEID = b.FEID", productId);
     display.features.replaceRecords(featureList);
 
-    // Retrieve Product Orders using a Web Service
+    // Tab 3: Retrieve Product Orders using a Web Service
     var ordersResult = pjs.sendRequest("get", "http://localhost:8081/prodorders/" + productId, {});
     display.orders.replaceRecords(ordersResult.orders);
     

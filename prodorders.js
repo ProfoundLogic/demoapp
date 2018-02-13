@@ -1,14 +1,12 @@
 
 // This is a simple Web Service to retrieve Orders for a Product
 
-function prodorders(req, res) {
-  var productId = req.params.id;
-
+function prodorders(request, response) {
   var result = {};  
-  result.orders = pjs.query("SELECT * FROM ORDERS WHERE ORDERPRID = " + productId);
+  result.orders = pjs.query("SELECT * FROM ORDERS WHERE ORDERPRID = " + request.params.id);
   result.count = result.orders.length;
  
-  res.json(result);  
+  response.json(result);  
 }
 
 exports.run = prodorders;
