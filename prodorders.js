@@ -3,7 +3,7 @@
 
 function prodorders(request, response) {
   var result = {};  
-  result.orders = pjs.query("SELECT * FROM ORDERS WHERE ORDERPRID = " + request.params.id);
+  result.orders = pjs.query("SELECT * FROM ORDERS WHERE ORDERPRID = ?", request.params.id);
   result.count = result.orders.length;
  
   response.json(result);  

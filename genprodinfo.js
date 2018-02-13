@@ -1,8 +1,11 @@
+
+// Generate Word Document with Product Information
+
 var docx = require('docx');
 
 function genprodinfo(request, response) {
   var productId = request.params.id;
-  var product = pjs.query("SELECT * FROM PRODUCTSP WHERE PRID = " + productId, 1);
+  var product = pjs.query("SELECT * FROM PRODUCTSP WHERE PRID = ?", productId, 1);
   product.features = pjs.query("SELECT b.FENAME from PRODFEATP as a, FEATURESP as b where a.XPRID = ? and a.XFEID = b.FEID", productId);
   
   var document = generateDocument(product);
