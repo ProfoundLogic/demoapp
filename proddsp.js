@@ -12,7 +12,7 @@ function proddsp(productId) {
     productsp.getRecord(productId);
 
     // Tab 2: Retrieve Features
-    var featureList = pjs.query("select b.FENAME from demolib.PRODFEATP as a, demolib.featuresp as b where a.XPRID = ? and a.XFEID = b.FEID", productId);
+    var featureList = pjs.query("SELECT b.FENAME from PRODFEATP as a, FEATURESP as b where a.XPRID = ? and a.XFEID = b.FEID", productId);
     display.features.replaceRecords(featureList);
 
     // Tab 3: Retrieve Product Orders using a Web Service
