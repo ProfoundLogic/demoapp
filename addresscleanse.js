@@ -22,11 +22,11 @@ function cleanse(orders) {
   var list = [];
   for (var i = 0; i < orders.length; i++) {
     var order = orders[i];
-    var cleansedAddress = runPromise(verify(order));
-    list.push(cleansedAddress);
-    //list.push(verify(order));
+    //var cleansedAddress = runPromise(verify(order));
+    //list.push(cleansedAddress);
+    list.push(verify(order));
   }
-  //list = runPromise(Promise.all(list));
+  list = runPromise(Promise.all(list));
 
   var endTime = new Date();
   ellapsed = (endTime - startTime) + "ms";
