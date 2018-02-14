@@ -11,7 +11,6 @@ function genprodinfo(request, response) {
   var document = generateDocument(product);
   var exporter = new docx.ExpressPacker(document, response);
   exporter.pack(productId + " Information");
-  
 }
 
 exports.run = genprodinfo;
