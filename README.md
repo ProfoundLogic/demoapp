@@ -12,7 +12,7 @@ Before setting up the Node.js modules on IBM i, we suggest you try setting up an
 
 ## Setup
 
-This is a Profound.js application example. You should clone this repository into `profoundjs/modules/yourapp`, where `profoundjs` is your installation directory.
+Follow these instructions after you have cloned the repository.
 
 #### ILE setup 
 
