@@ -1,0 +1,26 @@
+{
+  "name": "profoundjs-deployment",
+  "version": "1.0.0",
+  "description": "Profound.js Deployment",
+  "keywords": [
+    "profound",
+    "profoundjs",
+    "pjs",
+    "profound logic",
+    "profoundlogic",
+    "profound ui",
+    "profoundui"
+  ],
+  "dependencies": {
+    "docx": "^3.1.0",
+    "pdfmake": "^0.1.35",
+    "profoundjs": "^4.2.4",
+    "usps-webtools": "^0.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node start.js"
+  },
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "private": true
+}

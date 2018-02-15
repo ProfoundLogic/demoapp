@@ -45,43 +45,11 @@ Next, you must
 
 #### Node.js setup
 
-For the document generation, you need to install a Node.js module called [`docx`](https://github.com/dolanmiu/docx). To do this, change your working directory to your Profound.js installation directory and then install it.
+Before you start the Profound.js server, you need to install all the package dependancies.
 
 1. `cd c:\pjsinstall` - change this depending on where you install Profound.js
-2. `npm install docx`
-
-For the web services to work, you will need to modify your `start.js` in the root of your Profound.js installation directory to include calls to `app.get`. It should look similar to the file below:
-
-```
-//start.js
-
-// Load Profound.js
-var profoundjs = require("profoundjs");
-
-// Process command line arguments
-profoundjs.rlog = process.argv.includes("-rlog");
-profoundjs.tlog = process.argv.includes("-tlog");
-
-// Apply configuration
-var config = require("./config.js");
-profoundjs.applyConfig(config);
-
-// Start Profound.js server
-var isWorker = profoundjs.server.listen();
-if (isWorker) {
-
-  // This is the top-level Express Application.
-  // Custom Express coding can be added here.
-  var express = profoundjs.server.express;
-  var app = profoundjs.server.app;
-  app.use(express.json());  // default to use JSON-encoded post data
-  
-  //Add these two lines for the web services to work.
-  app.get("/prodorders/:id", profoundjs.express("yourapp/prodorders"));
-  app.get("/genprodinfo/:id", profoundjs.express("yourapp/genprodinfo"));
-}
-
-```
+2. `npm install` - this will fetch all the required packages.
+3. `node updatepui` - this will download a copy of the htdocs for you.
 
 ## Running the application
 

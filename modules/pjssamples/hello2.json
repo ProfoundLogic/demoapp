@@ -1,0 +1,7 @@
+{ "text": "", "formats": [{
+  "screen": { "record format name": "screen1" },
+  "items": [
+    { "id": "Panel1", "field type": "css panel", "value": "Hello World", "left": "20px", "top": "20px", "width": "370px", "height": "160px", "z index": "8", "header theme": "B - Blue", "body theme": "C - Gray" }, 
+    { "id": "CssButton1", "field type": "css button", "value": "Click to continue", "left": "115px", "top": "95px", "theme": "F - Green", "icon position": "left", "icon": "check", "response": { "fieldName": "continue", "customTrue": "", "customFalse": "", "dataType": "indicator", "formatting": "Indicator", "indFormat": "1 / 0" } }
+  ]
+}], "keywords": [], "long name aliases": true }
