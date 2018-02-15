@@ -34,6 +34,7 @@ You must also create the tables used by the programs in this example on IBM i:
 > RUNSQLSTM SRCSTMF('ILE/prodfeatp.sql') COMMIT(*NONE) NAMING(*SQL)
 > RUNSQLSTM SRCSTMF('ILE/featuresp.sql') COMMIT(*NONE) NAMING(*SQL)
 > RUNSQLSTM SRCSTMF('ILE/categp.sql') COMMIT(*NONE) NAMING(*SQL)
+> RUNSQLSTM SRCSTMF('ILE/orders.sql') COMMIT(*NONE) NAMING(*SQL)
 ```
 
 Next, you must
