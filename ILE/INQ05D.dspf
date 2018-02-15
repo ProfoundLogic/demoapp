@@ -1,0 +1,670 @@
+     A                                      INDARA
+     A          R PRODSFL                   SFL
+     A            QPUI000001     1A  O  2  2
+     A            OPT            1A  H
+     A            PRID           5S 0H
+     A            PRIMAGE       60A  H
+     A            PRNAME        30A  H
+     A            PRPRICE        7S 2H
+     A            PRQTY          5S 0H
+     A          R QSFLCTL001                SFLCTL(PRODSFL)
+     A                                      SFLSIZ(0001)
+     A                                      SFLPAG(0001)
+     A                                      SFLDSP
+     A                                  1  2HTML('QPUISFLPRODCTL')
+     A          R COMPARESFL                SFL
+     A            QPUI000001     1A  O  2  2
+     A            CHECK1         1A  H
+     A            CHECK2         1A  H
+     A            FENAME        30A  H
+     A          R QSFLCTL002                SFLCTL(COMPARESFL)
+     A                                      SFLSIZ(0001)
+     A                                      SFLPAG(0001)
+     A                                      SFLDSP
+     A                                  1  2HTML('QPUISFLPRODCTL')
+     A          R PRODCTL
+     A  03 05 70                            CA01(03 'Response Indicator *IN03')
+     A                                      SETOF(05 'Response Indicator *IN05')
+     A                                  1  2HTML('QPUICTL2    PRODSFL   5    RS-
+     A                                      FLDSP    0    E1    3    N70RSFLDSP-
+     A                                      CTL 0    E1    3    N70RSFLCLR    0-
+     A                                          E1    3     70RSFLPAG    1    C-
+     A                                      1    6 RSFLSIZ    1    C3    100 0 -
+     A                                         COMPARESFL5    RSFLDSP    0     -
+     A                                      RSFLDSPCTL 0     RSFLCLR    0    FC-
+     A                                      LEARSFL  RSFLPAG    1    C2    13 R-
+     A                                      SFLSIZ    1    C2    14 0    2    R-
+     A                                      OVERLAY   0     RROWS      2    C1 -
+     A                                         1C2    20 ')
+     A                                  1  2HTML('{"screen":{"record format nam-
+     A                                      e":"PRODCTL","description":"View Pr-
+     A                                      oducts","overlay":"true","overlay r-
+     A                                      ange":"1-20","dd record number":{"f-
+     A                                      ieldName":"DDRRN","dataLength":"5",-
+     A                                      "decPos":"0","numSep":"false","zero-
+     A                                      Balance":"false","numBlankFill":"fa-
+     A                                      lse","zeroFill":"false","curSym":""-
+     A                                      ,"dataType":"zoned","formatting":"N-
+     A                                      umber","negNum":"-999.00","units":"-
+     A                                      "},"target element id":{"fieldName"-
+     A                                      :"DDElem","dataLength":"10","trimLe-
+     A                                      ading":"false","trimTrailing":"true-
+     A                                      ","blankFill":"false","rjZeroFill":-
+     A                                      "false","dataType":"char","formatti-
+     A                                      ng":"Text","textTransform":"none"}}-
+     A                                      ,"items":[{"id":"constant9","field -
+     A                                      type":"output field","value":"Filte-
+     A                                      r by Category:","css class":"hybrid-
+     A                                      -constant","left":"205px","cursor c-
+     A                                      olumn":"13","top":"115px","cursor r-
+     A                                      ow":"4","css class 2":"HI","font fa-
+     A                                      mily":"Trebuchet MS"},{"id":"S1CATI-
+     A                                      D","field type":"select box","css c-
+     A                                      lass":"hybrid-input","value":{"fiel-
+     A                                      dName":"S1CATID","designValue":"[S1-
+     A                                      CATID]","dataType":"zoned","formatt-
+     A                                      ing":"Number","numSep":"false","zer-
+     A                                      oBalance":"false","zeroFill":"false-
+     A                                      ","curSym":"","units":"","negNum":"-
+     A                                      999.00","dataLength":"5","decPos":"-
+     A                                      0"},"left":"415px","cursor column":-
+     A                                      "39","top":"115px","cursor row":"4"-
+     A                                      ,"width":"244px","choices database -
+     A                                      file":"CATEGP","choice options fiel-
+     A                                      d":"CATNAME","choice values field":-
+     A                                      "CATID"},{"id":"constant8","field t-
+     A                                      ype":"output field","value":"Positi-
+     A                                      on by Product Id:","css class":"hyb-
+     A                                      rid-constant","left":"205px","curso-
+     A                                      r column":"13","top":"155px","curso-
+     A                                      r row":"6","css class 2":"HI","font-
+     A                                       family":"Trebuchet MS"},{"id":"S1P-
+     A                                      RID","field type":"textbox","css cl-
+     A                                      ass":"hybrid-input","value":{"field-
+     A                                      Name":"S1PRID","designValue":"[S1PR-
+     A                                      ID]","dataType":"zoned","formatting-
+     A                                      ":"Number","numSep":"false","zeroBa-
+     A                                      lance":"false","zeroFill":"false","-
+     A                                      curSym":"","units":"","negNum":"999-
+     A                                      .00","dataLength":"5","decPos":"0"}-
+     A                                      ,"left":"415px","cursor column":"39-
+     A                                      ","top":"155px","cursor row":"6","w-
+     A                                      idth":"244px","font family":"Trebuc-
+     A                                      het MS"},{"id":"constant5","field t-
+     A                                      ype":"output field","value":"Positi-
+     A                                      on by Product Name:","css class":"h-
+     A                                      ybrid-constant","left":"205px","cur-
+     A                                      sor column":"13","top":"195px","cur-
+     A                                      sor row":"8","css class 2":"HI","fo-
+     A                                      nt family":"Trebuchet MS"},{"id":"S-
+     A                                      1PRNAME","field type":"textbox","cs-
+     A                                      s class":"hybrid-input","value":{"f-
+     A                                      ieldName":"S1PRNAME","designValue":-
+     A                                      "[S1PRNAME]","dataType":"char","for-
+     A                                      matting":"Text","trimLeading":"fals-
+     A                                      e","trimTrailing":"true","dataLengt-
+     A                                      h":"30"},"left":"415px","cursor col-
+     A                                      umn":"39","top":"195px","cursor row-
+     A                                      ":"8","width":"244px","comparison o-
+     A                                      perator":"Not Equal","comparison va-
+     A                                      lue":"JUNK","font fam')
+     A                                  1  2HTML('ily":"Trebuchet MS"},{"id":"P-
+     A                                      RODSFL","field type":"grid","number-
+     A                                       of columns":"5","record format nam-
+     A                                      e":"PRODSFL","description":"Product-
+     A                                      s Subfile","display subfile":{"fiel-
+     A                                      dName":"N70","dataType":"expression-
+     A                                      ","formatting":"Indicator","indForm-
+     A                                      at":"true / false"},"display contro-
+     A                                      l record":{"fieldName":"N70","dataT-
+     A                                      ype":"expression","formatting":"Ind-
+     A                                      icator","indFormat":"true / false"}-
+     A                                      ,"clear subfile":{"fieldName":"70",-
+     A                                      "dataType":"expression","formatting-
+     A                                      ":"Indicator","indFormat":"true / f-
+     A                                      alse"},"subfile size":"100","header-
+     A                                       height":"29","row height":"68","cs-
+     A                                      s class":"mobile-grid","subfile end-
+     A                                      ":{"fieldName":"N70","dataType":"ex-
+     A                                      pression","formatting":"Indicator",-
+     A                                      "indFormat":"true / false"},"sortab-
+     A                                      le columns":"true","number of rows"-
+     A                                      :"7","top":"230px","left":"205px","-
+     A                                      column widths":"92,64,219,84,85","c-
+     A                                      olumn headings":"Image,Product,Prod-
+     A                                      uct Name,Price,Qty,View","height":"-
+     A                                      437px","width":"545px","selection f-
+     A                                      ield":{"fieldName":"OPT","dataLengt-
+     A                                      h":"1","trimLeading":"false","trimT-
+     A                                      railing":"true","blankFill":"false"-
+     A                                      ,"rjZeroFill":"false","dataType":"c-
+     A                                      har","formatting":"Text","textTrans-
+     A                                      form":"none"},"selection value":"1"-
+     A                                      ,"onrowclick":"pui.click();","row s-
+     A                                      election":"single","allow drag":"tr-
+     A                                      ue","drop targets":"Image1,Image2",-
+     A                                      "filter option":"true","find option-
+     A                                      ":"true","header font size":"11px",-
+     A                                      "header font color":"#000000","bord-
+     A                                      er width":"0px","selection font col-
+     A                                      or":"#FFFFFF","selection background-
+     A                                      ":"#FFFFAA","selection image":" ","-
+     A                                      header text align":",,left,right,",-
+     A                                      "export option":"true"},{"id":"link-
+     A                                      Submit","field type":"hyperlink","v-
+     A                                      alue":"Continue","shortcut key":"En-
+     A                                      ter","left":"45px","top":"99px","wi-
+     A                                      dth":"145px","height":"23px","css c-
+     A                                      lass":"hybrid-link","auto arrange":-
+     A                                      "true","z index":"21"},{"id":"linkC-
+     A                                      A03","field type":"hyperlink","bypa-
+     A                                      ss validation":"true","value":"Exit-
+     A                                      ","shortcut key":"F3","response":{"-
+     A                                      fieldName":"*IN03","dataType":"indi-
+     A                                      cator","formatting":"Indicator","in-
+     A                                      dFormat":"1 / 0"},"left":"45px","to-
+     A                                      p":"132px","width":"145px","height"-
+     A                                      :"23px","css class":"hybrid-link","-
+     A                                      auto arrange":"true","z index":"21"-
+     A                                      },{"id":"linkCA05","field type":"hy-
+     A                                      perlink","bypass validation":"true"-
+     A                                      ,"value":"Refresh","shortcut key":"-
+     A                                      F5","response":{"fieldName":"*IN05"-
+     A                                      ,"dataType":"indicator","formatting-
+     A                                      ":"Indicator","indFormat":"1 / 0"},-
+     A                                      "left":"45px","top":"165px","width"-
+     A                                      :"145px","height":"23px","css class-
+     A                                      ":"hybrid-link","auto arrange":"tru-
+     A                                      e","z index":"21"},{"id":"Grid1","f-
+     A                                      ield type":"grid","css class":"mobi-
+     A                                      le-grid","left":"775px","top":"230p-
+     A                                      x","number of rows":"14","number of-
+     A                                       columns":"3","column')
+     A                                  1  2HTML(' widths":"164,84,98","column -
+     A                                      headings":"Feature,,","header heigh-
+     A                                      t":"95","row height":"26","height":-
+     A                                      "433px","width":"347px","record for-
+     A                                      mat name":"COMPARESFL","clear subfi-
+     A                                      le":{"fieldName":"ClearSFL","dataTy-
+     A                                      pe":"indicator","formatting":"Indic-
+     A                                      ator","indFormat":"true / false"},"-
+     A                                      has header":"true","header font col-
+     A                                      or":"#000000","border width":"0px"}-
+     A                                      ,{"id":"Image1","field type":"image-
+     A                                      ","left":"950px","top":"240px","ima-
+     A                                      ge source":{"fieldName":"Image1","d-
+     A                                      ataLength":"60","trimLeading":"fals-
+     A                                      e","trimTrailing":"true","blankFill-
+     A                                      ":"false","rjZeroFill":"false","dat-
+     A                                      aType":"char","formatting":"Text","-
+     A                                      textTransform":"none","designValue"-
+     A                                      :"/profoundui/proddata/images/image-
+     A                                      .png"},"height":"55px","width":"65p-
+     A                                      x","tool tip":{"fieldName":"ProdNam-
+     A                                      e1","dataLength":"30","trimLeading"-
+     A                                      :"false","trimTrailing":"true","bla-
+     A                                      nkFill":"false","rjZeroFill":"false-
+     A                                      ","dataType":"char","formatting":"T-
+     A                                      ext","textTransform":"none","design-
+     A                                      Value":"[ProdName1]"}},{"id":"Image-
+     A                                      2","field type":"image","image sour-
+     A                                      ce":{"fieldName":"Image2","dataLeng-
+     A                                      th":"60","trimLeading":"false","tri-
+     A                                      mTrailing":"true","blankFill":"fals-
+     A                                      e","rjZeroFill":"false","dataType":-
+     A                                      "char","formatting":"Text","textTra-
+     A                                      nsform":"none","designValue":"/prof-
+     A                                      oundui/proddata/images/image.png"},-
+     A                                      "left":"1035px","top":"240px","heig-
+     A                                      ht":"55px","width":"65px","tool tip-
+     A                                      ":{"fieldName":"ProdName2","dataLen-
+     A                                      gth":"30","trimLeading":"false","tr-
+     A                                      imTrailing":"true","blankFill":"fal-
+     A                                      se","rjZeroFill":"false","dataType"-
+     A                                      :"char","formatting":"Text","textTr-
+     A                                      ansform":"none","designValue":"[Pro-
+     A                                      dName2]"}},{"id":"OutputField2","fi-
+     A                                      eld type":"output field","css class-
+     A                                      ":"hybrid-output-field","value":{"f-
+     A                                      ieldName":"Price1","dataLength":"7"-
+     A                                      ,"decPos":"2","numSep":"false","zer-
+     A                                      oBalance":"true","numBlankFill":"fa-
+     A                                      lse","zeroFill":"false","curSym":""-
+     A                                      ,"dataType":"zoned","formatting":"N-
+     A                                      umber","negNum":"-999.00","units":"-
+     A                                      ","designValue":"[Price1]"},"left":-
+     A                                      "950px","top":"300px","color":"#000-
+     A                                      000","width":"64px","text align":"r-
+     A                                      ight"},{"id":"OutputField2_copy","f-
+     A                                      ield type":"output field","css clas-
+     A                                      s":"hybrid-output-field","value":{"-
+     A                                      fieldName":"Price2","dataLength":"7-
+     A                                      ","decPos":"2","numSep":"false","ze-
+     A                                      roBalance":"true","numBlankFill":"f-
+     A                                      alse","zeroFill":"false","curSym":"-
+     A                                      ","dataType":"zoned","formatting":"-
+     A                                      Number","negNum":"-999.00","units":-
+     A                                      "","designValue":"[Price2]"},"color-
+     A                                      ":"#000000","text align":"right","l-
+     A                                      eft":"1035px","top":"300px","width"-
+     A                                      :"64px"},{"id":"Panel1","field type-
+     A                                      ":"css panel","value":"View Product-
+     A                                      s","left":"150px","top":"50px","wid-
+     A                                      th":"1025px","height":"635px","z in-
+     A                                      dex":"8","header them')
+     A                                  1  2HTML('e":"C - Gray","body theme":"C-
+     A                                       - Gray","straight edge":"all","bac-
+     A                                      kground color":"#FFFFFF"},{"id":"PR-
+     A                                      ID","field type":"output field","va-
+     A                                      lue":{"fieldName":"PRID","designVal-
+     A                                      ue":"[PRID]","dataType":"zoned","fo-
+     A                                      rmatting":"Number","numSep":"false"-
+     A                                      ,"zeroBalance":"false","zeroFill":"-
+     A                                      false","curSym":"","units":"","negN-
+     A                                      um":"999.00","dataLength":"5","decP-
+     A                                      os":"0"},"css class":"hybrid-output-
+     A                                      -field","left":"15px","cursor colum-
+     A                                      n":"14","top":"5px","cursor row":"1-
+     A                                      2","width":"40px","text align":"lef-
+     A                                      t","font family":"Trebuchet MS","gr-
+     A                                      id":"PRODSFL","column":"1"},{"id":"-
+     A                                      PRNAME","field type":"output field"-
+     A                                      ,"value":{"fieldName":"PRNAME","des-
+     A                                      ignValue":"[PRNAME]","dataType":"ch-
+     A                                      ar","formatting":"Text","trimLeadin-
+     A                                      g":"false","trimTrailing":"false","-
+     A                                      textTransform":"none","dataLength":-
+     A                                      "30"},"css class":"hybrid-output-fi-
+     A                                      eld","left":"5px","cursor column":"-
+     A                                      21","top":"5px","cursor row":"12","-
+     A                                      width":"200px","font family":"Trebu-
+     A                                      chet MS","grid":"PRODSFL","column":-
+     A                                      "2"},{"id":"PRPRICE","field type":"-
+     A                                      output field","value":{"fieldName":-
+     A                                      "PRPRICE","designValue":"[PRPRICE]"-
+     A                                      ,"dataType":"zoned","formatting":"N-
+     A                                      umber","numSep":"false","zeroBalanc-
+     A                                      e":"true","zeroFill":"false","curSy-
+     A                                      m":"","units":"","negNum":"999.00",-
+     A                                      "dataLength":"7","decPos":"2"},"css-
+     A                                       class":"hybrid-output-field","left-
+     A                                      ":"10px","cursor column":"53","top"-
+     A                                      :"5px","cursor row":"12","width":"7-
+     A                                      0px","text align":"right","font fam-
+     A                                      ily":"Trebuchet MS","grid":"PRODSFL-
+     A                                      ","column":"3"},{"id":"PRQTY","fiel-
+     A                                      d type":"output field","value":{"fi-
+     A                                      eldName":"PRQTY","designValue":"[PR-
+     A                                      QTY]","dataType":"zoned","formattin-
+     A                                      g":"Number","numSep":"false","zeroB-
+     A                                      alance":"false","zeroFill":"false",-
+     A                                      "curSym":"","units":"","negNum":"99-
+     A                                      9.00","dataLength":"5","decPos":"0"-
+     A                                      },"css class":"hybrid-output-field"-
+     A                                      ,"left":"-5px","cursor column":"65"-
+     A                                      ,"top":"5px","cursor row":"12","wid-
+     A                                      th":"55px","text align":"right","fo-
+     A                                      nt family":"Trebuchet MS","grid":"P-
+     A                                      RODSFL","column":"4"},{"id":"Image"-
+     A                                      ,"field type":"image","left":"5px",-
+     A                                      "top":"5px","image source":{"fieldN-
+     A                                      ame":"PRIMAGE","dataLength":"60","t-
+     A                                      rimLeading":"false","trimTrailing":-
+     A                                      "true","blankFill":"false","rjZeroF-
+     A                                      ill":"false","dataType":"char","for-
+     A                                      matting":"Text","textTransform":"no-
+     A                                      ne","designValue":"/profoundui/prod-
+     A                                      data/images/image.png"},"width":"75-
+     A                                      px","height":"60px","grid":"PRODSFL-
+     A                                      ","column":"0"},{"id":"OutputField1-
+     A                                      ","field type":"output field","css -
+     A                                      class":"outputField","value":{"fiel-
+     A                                      dName":"FENAME","dataLength":"30","-
+     A                                      trimLeading":"false","trimTrailing"-
+     A                                      :"true","blankFill":"false","rjZero-
+     A                                      Fill":"false","dataType":"char","fo-
+     A                                      rmatting":"Text","tex')
+     A                                  1  2HTML('tTransform":"none","designVal-
+     A                                      ue":"[FENAME]"},"left":"10px","top"-
+     A                                      :"5px","font family":"Trebuchet MS"-
+     A                                      ,"grid":"Grid1","column":"0"},{"id"-
+     A                                      :"Image3","field type":"image","lef-
+     A                                      t":"35px","top":"5px","image source-
+     A                                      ":{"fieldName":"Check1","customTrue-
+     A                                      ":"/profoundui/userdata/images/yes.-
+     A                                      png","customFalse":"/profoundui/use-
+     A                                      rdata/images/no.png","dataType":"in-
+     A                                      dicator","formatting":"Indicator","-
+     A                                      indFormat":"Custom Values","designV-
+     A                                      alue":"/profoundui/proddata/images/-
+     A                                      image.png"},"width":"16px","height"-
+     A                                      :"16px","grid":"Grid1","column":"1"-
+     A                                      },{"id":"Image3_copy","field type":-
+     A                                      "image","image source":{"fieldName"-
+     A                                      :"Check2","customTrue":"/profoundui-
+     A                                      /userdata/images/yes.png","customFa-
+     A                                      lse":"/profoundui/userdata/images/n-
+     A                                      o.png","dataType":"indicator","form-
+     A                                      atting":"Indicator","indFormat":"Cu-
+     A                                      stom Values","designValue":"/profou-
+     A                                      ndui/proddata/images/image.png"},"l-
+     A                                      eft":"35px","top":"5px","height":"1-
+     A                                      6px","width":"16px","grid":"Grid1",-
+     A                                      "column":"2"}]}')
+     A            CLEARSFL       1A  H
+     A            DDELEM        10A  H
+     A            DDRRN          5S 0H
+     A            IMAGE1        60A  H
+     A            IMAGE2        60A  H
+     A            PRICE1         7S 2H
+     A            PRICE2         7S 2H
+     A            PRODNAME1     30A  H
+     A            PRODNAME2     30A  H
+     A            S1CATID        5S 0H
+     A            S1PRID         5S 0H
+     A            S1PRNAME      30A  H
+     A          R PRODDETL
+     A  03 06 12                            CA01(03 'Response Indicator *IN03')
+     A                                      SETOF(06 'Response Indicator *IN06')
+     A                                      SETOF(12 'Response Indicator *IN12')
+     A                                  1  2HTML('QPUIREC1    RROWS      2    C-
+     A                                      1    1C2    22 ')
+     A                                  1  2HTML('{"screen":{"record format nam-
+     A                                      e":"PRODDETL","description":"Produc-
+     A                                      t Details","overlay range":"1-22"},-
+     A                                      "items":[{"id":"INQ01D_PRODDETL_Hea-
+     A                                      dingPanel","field type":"output fie-
+     A                                      ld","left":"5px","top":"0px","width-
+     A                                      ":"940px","height":"44px","z index"-
+     A                                      :"8","locked in place":"true","css -
+     A                                      class":"hybrid-heading2","css class-
+     A                                       2":"stationary"},{"id":"constant10-
+     A                                      ","field type":"output field","valu-
+     A                                      e":"Product Details","css class":"h-
+     A                                      ybrid-constant","left":"462px","cur-
+     A                                      sor column":"34","top":"5px","curso-
+     A                                      r row":"1","css class 2":"top-line"-
+     A                                      ,"css class 3":"HI"},{"id":"INQ01D_-
+     A                                      PRODDETL_ActionsPanel","field type"-
+     A                                      :"output field","left":"5px","top":-
+     A                                      "52px","height":"570px","width":"16-
+     A                                      5px","z index":"8","locked in place-
+     A                                      ":"true","css class":"hybrid-action-
+     A                                      s","css class 2":"stationary"},{"id-
+     A                                      ":"constant11","field type":"output-
+     A                                       field","value":"Product Id:","css -
+     A                                      class":"hybrid-constant","left":"23-
+     A                                      0px","cursor column":"5","top":"65p-
+     A                                      x","cursor row":"4","css class 2":"-
+     A                                      HI"},{"id":"PRODDETL_PRID","field t-
+     A                                      ype":"output field","value":{"field-
+     A                                      Name":"PRID","designValue":"[PRID]"-
+     A                                      ,"dataType":"zoned","formatting":"N-
+     A                                      umber","numSep":"false","zeroBalanc-
+     A                                      e":"false","zeroFill":"false","curS-
+     A                                      ym":"","units":"","negNum":"999.00"-
+     A                                      ,"dataLength":"5","decPos":"0"},"cs-
+     A                                      s class":"hybrid-output-field","lef-
+     A                                      t":"350px","cursor column":"20","to-
+     A                                      p":"65px","cursor row":"4","width":-
+     A                                      "40px","text align":"right"},{"id":-
+     A                                      "constant12","field type":"output f-
+     A                                      ield","value":"Product Name:","css -
+     A                                      class":"hybrid-constant","left":"23-
+     A                                      0px","cursor column":"5","top":"105-
+     A                                      px","cursor row":"6","css class 2":-
+     A                                      "HI"},{"id":"PRODDETL_PRNAME","fiel-
+     A                                      d type":"output field","value":{"fi-
+     A                                      eldName":"PRNAME","designValue":"[P-
+     A                                      RNAME]","dataType":"char","formatti-
+     A                                      ng":"Text","trimLeading":"false","t-
+     A                                      rimTrailing":"false","textTransform-
+     A                                      ":"none","dataLength":"30"},"css cl-
+     A                                      ass":"hybrid-output-field","left":"-
+     A                                      350px","cursor column":"20","top":"-
+     A                                      105px","cursor row":"6"},{"id":"con-
+     A                                      stant13","field type":"output field-
+     A                                      ","value":"Description:","css class-
+     A                                      ":"hybrid-constant","left":"230px",-
+     A                                      "cursor column":"5","top":"145px","-
+     A                                      cursor row":"8","css class 2":"HI"}-
+     A                                      ,{"id":"PRDESC","field type":"outpu-
+     A                                      t field","value":{"fieldName":"PRDE-
+     A                                      SC","designValue":"[PRDESC]","dataT-
+     A                                      ype":"char","formatting":"Text","tr-
+     A                                      imLeading":"false","trimTrailing":"-
+     A                                      false","textTransform":"none","data-
+     A                                      Length":"60"},"css class":"hybrid-o-
+     A                                      utput-field","left":"350px","cursor-
+     A                                       column":"20","top":"145px","cursor-
+     A                                       row":"8"},{"id":"constant14","fiel-
+     A                                      d type":"output field","value":"Pri-
+     A                                      ce:","css class":"hybrid-constant",-
+     A                                      "left":"230px","curso')
+     A                                  1  2HTML('r column":"5","top":"185px","-
+     A                                      cursor row":"10","css class 2":"HI"-
+     A                                      },{"id":"PRODDETL_PRPRICE","field t-
+     A                                      ype":"output field","value":{"field-
+     A                                      Name":"PRPRICE","designValue":"[PRP-
+     A                                      RICE]","dataType":"zoned","formatti-
+     A                                      ng":"Number","numSep":"true","zeroB-
+     A                                      alance":"true","zeroFill":"false","-
+     A                                      curSym":"","units":"","negNum":"999-
+     A                                      .00-","dataLength":"7","decPos":"2"-
+     A                                      },"css class":"hybrid-output-field"-
+     A                                      ,"left":"318px","cursor column":"16-
+     A                                      ","top":"185px","cursor row":"10","-
+     A                                      width":"80px","text align":"right"}-
+     A                                      ,{"id":"constant15","field type":"o-
+     A                                      utput field","value":"Quantity:","c-
+     A                                      ss class":"hybrid-constant","left":-
+     A                                      "230px","cursor column":"5","top":"-
+     A                                      225px","cursor row":"12","css class-
+     A                                       2":"HI"},{"id":"PRODDETL_PRQTY","f-
+     A                                      ield type":"output field","value":{-
+     A                                      "fieldName":"PRQTY","designValue":"-
+     A                                      [PRQTY]","dataType":"zoned","format-
+     A                                      ting":"Number","numSep":"false","ze-
+     A                                      roBalance":"false","zeroFill":"fals-
+     A                                      e","curSym":"","units":"","negNum":-
+     A                                      "999.00","dataLength":"5","decPos":-
+     A                                      "0"},"css class":"hybrid-output-fie-
+     A                                      ld","left":"350px","cursor column":-
+     A                                      "20","top":"225px","cursor row":"12-
+     A                                      ","width":"40px","text align":"righ-
+     A                                      t"},{"id":"constant16","field type"-
+     A                                      :"output field","value":"Category:"-
+     A                                      ,"css class":"hybrid-constant","lef-
+     A                                      t":"230px","cursor column":"5","top-
+     A                                      ":"265px","cursor row":"14","css cl-
+     A                                      ass 2":"HI"},{"id":"PRCATID","field-
+     A                                       type":"output field","value":{"fie-
+     A                                      ldName":"PRCATID","designValue":"[P-
+     A                                      RCATID]","dataType":"zoned","format-
+     A                                      ting":"Number","numSep":"false","ze-
+     A                                      roBalance":"false","zeroFill":"fals-
+     A                                      e","curSym":"","units":"","negNum":-
+     A                                      "999.00","dataLength":"5","decPos":-
+     A                                      "0"},"css class":"hybrid-output-fie-
+     A                                      ld","left":"350px","cursor column":-
+     A                                      "20","top":"265px","cursor row":"14-
+     A                                      ","width":"40px","text align":"righ-
+     A                                      t"},{"id":"PRODDETL_CATNAME","field-
+     A                                       type":"output field","value":{"fie-
+     A                                      ldName":"CATNAME","designValue":"[C-
+     A                                      ATNAME]","dataType":"char","formatt-
+     A                                      ing":"Text","trimLeading":"false","-
+     A                                      trimTrailing":"false","textTransfor-
+     A                                      m":"none","dataLength":"30"},"css c-
+     A                                      lass":"hybrid-output-field","left":-
+     A                                      "406px","cursor column":"27","top":-
+     A                                      "265px","cursor row":"14"},{"id":"l-
+     A                                      inkSubmit","field type":"hyperlink"-
+     A                                      ,"value":"Continue","shortcut key":-
+     A                                      "Enter","left":"25px","top":"70px",-
+     A                                      "width":"145px","height":"23px","cs-
+     A                                      s class":"hybrid-link","auto arrang-
+     A                                      e":"true"},{"id":"linkCA03","field -
+     A                                      type":"hyperlink","bypass validatio-
+     A                                      n":"true","value":"Exit","shortcut -
+     A                                      key":"F3","response":{"fieldName":"-
+     A                                      *IN03","dataType":"indicator","form-
+     A                                      atting":"Indicator","indFormat":"1 -
+     A                                      / 0"},"left":"25px","top":"103px","-
+     A                                      width":"145px","height":"23px","css-
+     A                                       class":"hybrid-link"')
+     A                                  1  2HTML(',"auto arrange":"true"},{"id"-
+     A                                      :"linkCF06","field type":"hyperlink-
+     A                                      ","value":"Show Features","shortcut-
+     A                                       key":"F6","response":{"fieldName":-
+     A                                      "*IN06","dataType":"indicator","for-
+     A                                      matting":"Indicator","indFormat":"1-
+     A                                       / 0"},"left":"25px","top":"136px",-
+     A                                      "width":"145px","height":"23px","cs-
+     A                                      s class":"hybrid-link","auto arrang-
+     A                                      e":"true"},{"id":"linkCA12","field -
+     A                                      type":"hyperlink","bypass validatio-
+     A                                      n":"true","value":"Cancel","shortcu-
+     A                                      t key":"F12","response":{"fieldName-
+     A                                      ":"*IN12","dataType":"indicator","f-
+     A                                      ormatting":"Indicator","indFormat":-
+     A                                      "1 / 0"},"left":"25px","top":"169px-
+     A                                      ","width":"145px","height":"23px","-
+     A                                      css class":"hybrid-link","auto arra-
+     A                                      nge":"true"}]}')
+     A            CATNAME       30A  H
+     A            PRCATID        5S 0H
+     A            PRDESC        60A  H
+     A            PRID           5S 0H
+     A            PRNAME        30A  H
+     A            PRPRICE        7S 2H
+     A            PRQTY          5S 0H
+     A          R FEATSFL                   SFL
+     A            QPUI000001     1A  O  2  2
+     A            FEID           5S 0H
+     A            FENAME        30A  H
+     A          R QSFLCTL003                SFLCTL(FEATSFL)
+     A                                      SFLSIZ(0001)
+     A                                      SFLPAG(0001)
+     A                                      SFLDSP
+     A                                  1  2HTML('QPUISFLFEATWIN')
+     A          R FEATWIN
+     A  12 60                               CA01(12 'Response Indicator *IN12')
+     A                                  1  2HTML('QPUICTL1    FEATSFL   5    RS-
+     A                                      FLDSP    0    E1    3    N60RSFLDSP-
+     A                                      CTL 0    E1    3    N60RSFLCLR    0-
+     A                                          E1    3     60RSFLPAG    1    C-
+     A                                      1    7 RSFLSIZ    1    C2    50 0  -
+     A                                        2    RWINDOW    0     RROWS      -
+     A                                      2    C1    1C1    8 ')
+     A                                  1  2HTML('{"screen":{"record format nam-
+     A                                      e":"FEATWIN","description":"Feature-
+     A                                      s Window","show as window":"true","-
+     A                                      window top":"8","window left":"19",-
+     A                                      "overlay range":"1-8"},"items":[{"i-
+     A                                      d":"FEATWIN","field type":"panel","-
+     A                                      panel style":"Sapphire","value":" P-
+     A                                      roduct Features ","text align":"cen-
+     A                                      ter","left":"5px","top":"5px","heig-
+     A                                      ht":"330px","width":"390px","z inde-
+     A                                      x":"8","locked in place":"true"},{"-
+     A                                      id":"FEATSFL","field type":"grid","-
+     A                                      number of columns":"2","record form-
+     A                                      at name":"FEATSFL","description":"F-
+     A                                      eatures Subfile","display subfile":-
+     A                                      {"fieldName":"N60","dataType":"expr-
+     A                                      ession","formatting":"Indicator","i-
+     A                                      ndFormat":"true / false"},"display -
+     A                                      control record":{"fieldName":"N60",-
+     A                                      "dataType":"expression","formatting-
+     A                                      ":"Indicator","indFormat":"true / f-
+     A                                      alse"},"clear subfile":{"fieldName"-
+     A                                      :"60","dataType":"expression","form-
+     A                                      atting":"Indicator","indFormat":"tr-
+     A                                      ue / false"},"subfile size":"50","h-
+     A                                      eader height":"20","row height":"20-
+     A                                      ","css class":"hybrid-grid","subfil-
+     A                                      e end":{"fieldName":"N60","dataType-
+     A                                      ":"expression","formatting":"Indica-
+     A                                      tor","indFormat":"true / false"},"s-
+     A                                      ortable columns":"true","number of -
+     A                                      rows":"8","top":"65px","left":"34px-
+     A                                      ","column widths":"56,275","column -
+     A                                      headings":"Id,Feature"},{"id":"btnS-
+     A                                      ubmit","field type":"button","value-
+     A                                      ":"Continue","shortcut key":"Enter"-
+     A                                      ,"left":"25px","top":"290px","width-
+     A                                      ":"80px","height":"23px","css class-
+     A                                      ":"hybrid-button","auto arrange":"t-
+     A                                      rue","cursor":"default"},{"id":"btn-
+     A                                      CA12","field type":"button","bypass-
+     A                                       validation":"true","value":"Close"-
+     A                                      ,"shortcut key":"F12","response":{"-
+     A                                      fieldName":"*IN12","dataType":"indi-
+     A                                      cator","formatting":"Indicator","in-
+     A                                      dFormat":"1 / 0"},"left":"115px","t-
+     A                                      op":"290px","width":"80px","height"-
+     A                                      :"23px","css class":"hybrid-button"-
+     A                                      ,"auto arrange":"true","cursor":"de-
+     A                                      fault"},{"id":"FEID","field type":"-
+     A                                      output field","value":{"fieldName":-
+     A                                      "FEID","designValue":"[FEID]","data-
+     A                                      Type":"zoned","formatting":"Number"-
+     A                                      ,"numSep":"false","zeroBalance":"fa-
+     A                                      lse","zeroFill":"false","curSym":""-
+     A                                      ,"units":"","negNum":"999.00","data-
+     A                                      Length":"5","decPos":"0"},"css clas-
+     A                                      s":"hybrid-output-field","left":"5p-
+     A                                      x","cursor column":"3","top":"1px",-
+     A                                      "cursor row":"2","width":"40px","te-
+     A                                      xt align":"right","grid":"FEATSFL",-
+     A                                      "column":"0"},{"id":"FENAME","field-
+     A                                       type":"output field","value":{"fie-
+     A                                      ldName":"FENAME","designValue":"[FE-
+     A                                      NAME]","dataType":"char","formattin-
+     A                                      g":"Text","trimLeading":"false","tr-
+     A                                      imTrailing":"false","textTransform"-
+     A                                      :"none","dataLength":"30"},"css cla-
+     A                                      ss":"hybrid-output-field","left":"5-
+     A                                      px","cursor column":"10","top":"1px-
+     A                                      ","cursor row":"2","grid":"FEATSFL"-
+     A                                      ,"column":"1"}]}')
+     A          R PRODBOTTOM
+     A  03 05                               CA01(03 'Response Indicator *IN03')
+     A                                      SETOF(05 'Response Indicator *IN05')
+     A                                  1  2HTML('QPUIREC2    ROVERLAY   0     -
+     A                                      RROWS      2    C2    23C2    23 ')
+     A                                  1  2HTML('{"screen":{"record format nam-
+     A                                      e":"PRODBOTTOM","description":"Func-
+     A                                      tion Keys","overlay":"true","overla-
+     A                                      y range":"23-23"},"items":[{"id":"I-
+     A                                      NQ01D_PRODBOTTOM_HeadingPanel","fie-
+     A                                      ld type":"output field","left":"5px-
+     A                                      ","top":"0px","width":"940px","heig-
+     A                                      ht":"44px","z index":"8","locked in-
+     A                                       place":"true","css class":"hybrid--
+     A                                      heading2","css class 2":"stationary-
+     A                                      "},{"id":"linkSubmit","field type":-
+     A                                      "hyperlink","value":"Continue","sho-
+     A                                      rtcut key":"Enter","left":"25px","t-
+     A                                      op":"70px","width":"145px","height"-
+     A                                      :"23px","css class":"hybrid-link","-
+     A                                      auto arrange":"true"},{"id":"linkCA-
+     A                                      03","field type":"hyperlink","bypas-
+     A                                      s validation":"true","value":"Exit"-
+     A                                      ,"shortcut key":"F3","response":{"f-
+     A                                      ieldName":"*IN03","dataType":"indic-
+     A                                      ator","formatting":"Indicator","ind-
+     A                                      Format":"1 / 0"},"left":"25px","top-
+     A                                      ":"103px","width":"145px","height":-
+     A                                      "23px","css class":"hybrid-link","a-
+     A                                      uto arrange":"true"},{"id":"linkCA0-
+     A                                      5","field type":"hyperlink","bypass-
+     A                                       validation":"true","value":"Refres-
+     A                                      h","shortcut key":"F5","response":{-
+     A                                      "fieldName":"*IN05","dataType":"ind-
+     A                                      icator","formatting":"Indicator","i-
+     A                                      ndFormat":"1 / 0"},"left":"25px","t-
+     A                                      op":"136px","width":"145px","height-
+     A                                      ":"23px","css class":"hybrid-link",-
+     A                                      "auto arrange":"true"}]}')
