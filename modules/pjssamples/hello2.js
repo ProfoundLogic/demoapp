@@ -3,9 +3,9 @@
 
 function hello2() {
 
-  pjs.defineDisplay("hello2.json");
+  pjs.defineDisplay("display", "pjssamples/hello2.json");
   
-  hello2.screen1.execute();
+  display.screen1.execute();
 
 }
 

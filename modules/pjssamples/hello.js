@@ -3,7 +3,7 @@
 
 function hello() {
 
-  pjs.display("hello.html");
+  pjs.display("pjssamples/hello.html");
   
 }
 

@@ -12,10 +12,10 @@
     "profoundui"
   ],
   "dependencies": {
-    "docx": "^3.1.0",
-    "pdfmake": "^0.1.35",
+    "docx": "^3.6.0",
+    "pdfmake": "^0.1.59",
     "profoundjs": "^4.2.4",
-    "usps-webtools": "^0.2.3"
+    "usps-webtools": "^0.2.5"
   },
   "devDependencies": {},
   "scripts": {

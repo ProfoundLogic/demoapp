@@ -3,7 +3,7 @@ function connect4(parm1) {
   pjs.define("firstTurn", { type: 'char', length: 6, refParm: parm1 });
 
   var grid = [];
-  pjs.defineDisplay("display", "connect4.json");
+  pjs.defineDisplay("display", "pjssamples/connect4.json");
   
   if (parm1 === undefined)
     initialize("");
@@ -64,13 +64,13 @@ function connect4(parm1) {
       sendGrid(); 
       display.game.write();
       display.winner.execute();
-      initialize();
+      initialize("");
     }
     else if (tied()) {
       sendGrid(); 
       display.game.write();
       display.tiegame.execute();
-      initialize();
+      initialize("");
     }
     else {
       switchTurn();
