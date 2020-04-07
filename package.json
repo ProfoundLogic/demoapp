@@ -14,7 +14,7 @@
   "dependencies": {
     "docx": "^3.6.0",
     "pdfmake": "^0.1.59",
-    "profoundjs": "^4.2.4",
+    "profoundjs": "^4.15.0",
     "usps-webtools": "^0.2.5"
   },
   "devDependencies": {},
